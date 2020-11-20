@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="DatosUsuario.Views.Home.HomePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Home"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False"
+    Shell.PresentationMode="ModalAnimated"
+    Shell.TabBarIsVisible="False">
+    <ContentPage.Content>
+        <RefreshView
+            BackgroundColor="Red"
+            Command="{Binding RefreshCommand}"
+            IsRefreshing="{Binding IsRefreshing}">
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+
+                <Label
+                    HorizontalTextAlignment="Center"
+                    Text="Usted no se ha autenticado"
+                    VerticalOptions="StartAndExpand">
+                    <Label.Triggers>
+                        <DataTrigger
+                            Binding="{Binding IsAuthVisible}"
+                            TargetType="Label"
+                            Value="True">
+                            <Setter Property="IsVisible" Value="False" />
+                        </DataTrigger>
+                    </Label.Triggers>
+                </Label>
+
+                <StackLayout IsVisible="{Binding IsAuthVisible}">
+                    <Label Text="{Binding Name, StringFormat=' Nombre: {0}'}" />
+                    <Label Text="{Binding Email, StringFormat=' Correo: {0}'}" />
+                    <Label Text="{Binding Phone, StringFormat=' Telefono: {0}'}" />
+                    <Label Text="{Binding Website, StringFormat=' Website: {0}'}" />
+                </StackLayout>
+
+                <Button Command="{Binding AuthenticateCommand}" Text="Autenticar Usuario" />
+                <Button Command="{Binding ListUsersCommand}" Text="Listar Usuarios" />
+            </StackLayout>
+        </RefreshView>
+    </ContentPage.Content>
+</ContentPage>

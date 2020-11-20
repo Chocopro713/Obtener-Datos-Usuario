@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="DatosUsuario.Views.Login.LoginPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Login"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="True"
+    Shell.TabBarIsVisible="False">
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior Command="{Binding BackCommand}" IconOverride="https://cdn.icon-icons.com/icons2/1744/PNG/128/3643736-back-backward-left-mark-sign_113426.png" />
+    </Shell.BackButtonBehavior>
+
+    <ContentPage.Content>
+        <StackLayout Margin="20" VerticalOptions="Center">
+            <StackLayout>
+                <Label Text="Usuario:" />
+                <Entry Text="{Binding User}" TextColor="Blue" />
+            </StackLayout>
+
+            <StackLayout>
+                <Label Text="Clave:" />
+                <Entry
+                    IsPassword="True"
+                    Text="{Binding Pass}"
+                    TextColor="Blue" />
+            </StackLayout>
+
+            <Button Command="{Binding LoginCommand}" Text="Login" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
