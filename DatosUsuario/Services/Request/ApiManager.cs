@@ -83,7 +83,7 @@ namespace DatosUsuario.Services.Request
                 _userDialogs.Toast(strngResponse, TimeSpan.FromSeconds(3));
                 return data;
             }
-           
+            
 
 
             data = await Policy
