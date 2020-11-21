@@ -79,22 +79,11 @@ namespace DatosUsuario.Services.Request
                 var strngResponse = "No hay una conexión de red";
                 data.StatusCode = HttpStatusCode.BadRequest;
                 data.Content = new StringContent(strngResponse);
-
+            
                 _userDialogs.Toast(strngResponse, TimeSpan.FromSeconds(3));
                 return data;
             }
-            IsReachable = await _connectivity.IsReachable(GlobalSetting.ApiHostName);
-
-            if (!IsReachable)
-            {
-                var strngResponse = "No hay una conexión de red";
-                data.StatusCode = HttpStatusCode.BadRequest;
-                data.Content = new StringContent(strngResponse);
-
-                _userDialogs.Toast(strngResponse, TimeSpan.FromSeconds(3));
-                return data;
-            }
-
+           
 
             data = await Policy
                 .Handle<WebException>()
