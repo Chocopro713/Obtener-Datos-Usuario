@@ -5,13 +5,14 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Shell.FlyoutBehavior="Disabled"
     Shell.NavBarIsVisible="True"
-    Shell.TabBarIsVisible="False">
+    Shell.TabBarIsVisible="False"
+    Title="Usuario">
     <Shell.BackButtonBehavior>
         <BackButtonBehavior Command="{Binding BackCommand}" IconOverride="https://cdn.icon-icons.com/icons2/1744/PNG/128/3643736-back-backward-left-mark-sign_113426.png" />
     </Shell.BackButtonBehavior>
 
     <ContentPage.Content>
-        <StackLayout Margin="10" VerticalOptions="Center">
+        <StackLayout Margin="10" VerticalOptions="Center" HorizontalOptions="Center">
             <Label Text="{Binding Id, StringFormat=' Id: {0}'}" />
             <Label Text="{Binding Name, StringFormat=' Nombre: {0}'}" />
             <Label Text="{Binding Age, StringFormat=' Edad: {0}'}" />

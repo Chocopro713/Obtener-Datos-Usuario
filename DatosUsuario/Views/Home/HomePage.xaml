@@ -5,12 +5,11 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="Home"
     Shell.FlyoutBehavior="Disabled"
-    Shell.NavBarIsVisible="False"
+    Shell.NavBarIsVisible="True"
     Shell.PresentationMode="ModalAnimated"
     Shell.TabBarIsVisible="False">
     <ContentPage.Content>
         <RefreshView
-            BackgroundColor="Red"
             Command="{Binding RefreshCommand}"
             IsRefreshing="{Binding IsRefreshing}">
             <StackLayout HorizontalOptions="Center" VerticalOptions="Center">

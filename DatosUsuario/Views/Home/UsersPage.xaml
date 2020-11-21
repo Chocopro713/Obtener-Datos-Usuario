@@ -7,7 +7,8 @@
     x:Name="MyUsersPageRef"
     Shell.FlyoutBehavior="Disabled"
     Shell.NavBarIsVisible="True"
-    Shell.TabBarIsVisible="False">
+    Shell.TabBarIsVisible="False"
+    Title="Usuarios">
     <Shell.BackButtonBehavior>
         <BackButtonBehavior Command="{Binding BackCommand}" IconOverride="https://cdn.icon-icons.com/icons2/1744/PNG/128/3643736-back-backward-left-mark-sign_113426.png" />
     </Shell.BackButtonBehavior>

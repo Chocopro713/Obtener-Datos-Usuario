@@ -15,18 +15,44 @@
         <StackLayout Margin="20" VerticalOptions="Center">
             <StackLayout>
                 <Label Text="Usuario:" />
-                <Entry Text="{Binding User}" TextColor="Blue" />
+
+                <Frame
+                    Padding="5,2"
+                    BorderColor="Gray"
+                    CornerRadius="12"
+                    HasShadow="True"
+                    HorizontalOptions="FillAndExpand"
+                    IsClippedToBounds="True">
+                    <Entry
+                        Placeholder="Escribe un mensaje"
+                        Text="{Binding User}"
+                        TextColor="Blue" />
+                </Frame>
             </StackLayout>
 
             <StackLayout>
                 <Label Text="Clave:" />
-                <Entry
-                    IsPassword="True"
-                    Text="{Binding Pass}"
-                    TextColor="Blue" />
+
+                <Frame
+                    Padding="5,2"
+                    BorderColor="Gray"
+                    CornerRadius="12"
+                    HasShadow="True"
+                    HorizontalOptions="FillAndExpand"
+                    IsClippedToBounds="True">
+                    <Entry
+                        Placeholder="Escribe un mensaje"
+                        Text="{Binding Pass}"
+                        TextColor="Blue" />
+                </Frame>
             </StackLayout>
 
-            <Button Command="{Binding LoginCommand}" Text="Login" />
+            <Button
+                Margin="0,50"
+                BackgroundColor="Gray"
+                Command="{Binding LoginCommand}"
+                CornerRadius="12"
+                Text="Login" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
